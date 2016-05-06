@@ -80,3 +80,10 @@ rm *.txt
 mv LICENSE.temp LICENSE.txt
 ls
 echo ""
+
+asd=test
+echo "$asd"
+asd=asd
+echo "$asd"
+echo "$?"
+echo " "
