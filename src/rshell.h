@@ -4,20 +4,13 @@
 #include <cstring>
 #include <stdio.h>
 #include <string.h>
-<<<<<<< HEAD
 #include <unistd.h>
 #include <sys/wait.h>
-=======
-
->>>>>>> origin/master
 #include <sys/types.h>
 #include <vector>
 using namespace std;
 
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
 /***************************************************************/
 //This is our base class.  Our subclasses will make use of //these functions. 
 class Base
@@ -98,12 +91,8 @@ class CompositeCommand : public Base
 //This code will analyzed the type command and make distinctions
 void CompositeCommand::analyze(char **analyzed_command)  
 {
-<<<<<<< HEAD
   		char *one_command = strtok(userinput, " "); 	  		      
         int i = 0;                                      
-=======
-  		char *one_command = strtok(userinput, " "); 	  		      int i = 0;                                      
->>>>>>> origin/master
   		while(one_command != NULL)
  		{  
 			analyzed_command[i] = one_command ;

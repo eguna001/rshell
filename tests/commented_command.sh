@@ -20,7 +20,6 @@ echo "Don't #ignore me"
 #nothing happens
 how #are you?
 are #are
-<<<<<<< HEAD
 
 test /home && echo "returns true" || echo "returns false"
 
@@ -36,6 +35,4 @@ test #/home
 
 (echo C && echo D) ; #echo NO
  
-=======
->>>>>>> origin/master
 rm #
