@@ -87,6 +87,7 @@ asd=asd
 echo "$asd"
 echo "$?"
 echo " "
+<<<<<<< HEAD
 
 [ -e /home ]
 [ -f /home ]
@@ -99,3 +100,5 @@ echo "'[/ home' should be an error:"
 
 exit
 
+=======
+>>>>>>> origin/master
