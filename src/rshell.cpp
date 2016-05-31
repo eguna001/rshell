@@ -53,57 +53,83 @@ string substr2(char *word, int pos)
 	return temp;
 }
 
-bool runTest(char *command) {
+bool runTest(char *command) 
+{
 	struct stat stats;
 	string testArg = "";
 	const char *c;
 
-	if (firstWordIs(command, "test")) { // example: test -e test.txt
+	if (firstWordIs(command, "test")) 
+    { 
+        // example: test -e test.txt
 		// get the argument
 		testArg = substr(command, 5, 2);
 
 		// strip "test " and the argument from the command to get just the file/directory name
-		if (testArg == "-e" || testArg == "-f" || testArg == "-d") {
+		if (testArg == "-e" || testArg == "-f" || testArg == "-d") 
+        {
 			c = substr2(command, 5 + 3).c_str();
-		} else {
+		} 
+        else 
+        {
 			c = substr2(command, 5).c_str();
 		}
-	} else { // example: [ -e test.txt ]
+	} 
+    else 
+    { 
+        // example: [ -e test.txt ]
 		// get the argument
 		testArg = substr(command, 2, 2);
 
 		// strip "[ ," " ]," and the argument from the command to get just the file/directory name
-		if (testArg == "-e" || testArg == "-f" || testArg == "-d") {
+		if (testArg == "-e" || testArg == "-f" || testArg == "-d") 
+        {
 			c = substr2(command, 2 + 3).c_str();
-		} else {
+		} 
+        else 
+        {
 			c = substr2(command, 2).c_str();
 		}
 	}
 
 	// display whether the file/directory exists
-	if (stat(c, &stats) == -1) {
+	if (stat(c, &stats) == -1) 
+    {
 		cout << "(False)" << endl;
 		return false;
-	} else {
+	} 
+    else 
+    {
 		// display whether the file/directory is a file
-		if (testArg == "-f") {
-			if ((stats.st_mode & S_IFMT) != S_IFREG) {
+		if (testArg == "-f") 
+        {
+			if ((stats.st_mode & S_IFMT) != S_IFREG) 
+            {
 				cout << "(False)" << endl;
 				return false;
-			} else {
+			}
+            else 
+            {
 				cout << "(True)" << endl;
 				return true;
 			}
-			// display whether the file/directory is a directory
-		} else if (testArg == "-d") {
-			if ((stats.st_mode & S_IFMT) != S_IFDIR) {
+		}
+        // display whether the file/directory is a directory 
+        else if (testArg == "-d") 
+        {
+			if ((stats.st_mode & S_IFMT) != S_IFDIR) 
+            {
 				cout << "(False)" << endl;
 				return false;
-			} else {
+			} 
+            else 
+            {
 				cout << "(True)" << endl;
 				return true;
 			}
-		} else {
+		} 
+        else 
+        {
 			cout << "(True)" << endl;
 			return true;
 		}
@@ -159,7 +185,7 @@ int main()
 					delete [] analyzed2;
 					analyzed2 = new char*[256];
 					e = 0;
-					skip = true;
+                    skip = true;
 				}
 				if (analyzed[i][j] == ')')
 				{
