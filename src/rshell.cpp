@@ -233,12 +233,14 @@ int main()
 				analyzed2 = new char*[256];
 				e = 0;
 
-				if (inPar)
-					continue;
+
+
 
 				if (ex_result)
 					previous = false;
-				else
+				else if (inPar)
+                    continue;
+                else
 					previous = true;
 			}
 			else if (*analyzed[i] == '#')
